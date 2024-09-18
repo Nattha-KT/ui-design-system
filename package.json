@@ -10,6 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.36.1",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "prettier": "^3.3.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
