@@ -1,8 +1,0 @@
-node_modules
-.next
-out
-build
-public
-*.config.js
-*.setup.js
-.dist
