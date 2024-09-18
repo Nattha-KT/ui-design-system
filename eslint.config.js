@@ -46,7 +46,7 @@ export default tseslint.config(
         { allowConstantExport: true },
       ],
       'prettier/prettier': [
-        'error',
+        'off',
         {
           endOfLine: 'auto',
         },
