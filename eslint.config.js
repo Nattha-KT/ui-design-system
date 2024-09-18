@@ -52,7 +52,5 @@ export default tseslint.config(
         },
       ],
     },
-    // 'no-nested-ternary': 'off',
-    // 'import/prefer-default-export': 'off',
   },
 );
