@@ -45,12 +45,12 @@ export default tseslint.config(
         'warn',
         { allowConstantExport: true },
       ],
-      'prettier/prettier': [
-        'off',
-        {
-          endOfLine: 'auto',
-        },
-      ],
+      // 'prettier/prettier': [
+      //   'error',
+      //   {
+      //     endOfLine: 'auto',
+      //   },
+      // ],
     },
   },
 );
