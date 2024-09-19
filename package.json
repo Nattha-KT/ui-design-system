@@ -23,11 +23,14 @@
     ]
   },
   "dependencies": {
+    "@heroicons/react": "^2.1.5",
     "eslint-plugin-react": "^7.36.1",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "prettier": "^3.3.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "tailwindcss-animated": "^1.1.2",
+    "tailwindcss-radix": "^3.0.5",
     "vite-tsconfig-paths": "^5.0.1"
   },
   "devDependencies": {
