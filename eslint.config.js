@@ -2,7 +2,7 @@ import js from '@eslint/js';
 import eslintPluginPrettier from 'eslint-plugin-prettier';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
-import eslintPluginStorybook from 'eslint-plugin-storybook';
+import { configs as eslintPluginStorybook } from 'eslint-plugin-storybook';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
@@ -19,11 +19,7 @@ export default tseslint.config(
     ],
   },
   {
-    extends: [
-      js.configs.recommended,
-      ...tseslint.configs.recommended,
-      'plugin:storybook/recommended',
-    ],
+    extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
       ecmaVersion: 2020,
@@ -33,10 +29,11 @@ export default tseslint.config(
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
       prettier: eslintPluginPrettier,
-      storybook: eslintPluginStorybook,
+      storybook: eslintPluginStorybook.recommended,
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
+      ...eslintPluginStorybook.recommended.rules,
       'no-unused-vars': [
         'error',
         {
