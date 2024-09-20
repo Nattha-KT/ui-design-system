@@ -9,8 +9,10 @@
   "editor.formatOnSave": true, // Tell VSCode to format files on save
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "tailwindCSS.experimental.classRegex": [
-    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
-    ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+    "cva\\(([^)]*)\\)",
+    "[\"'`]([^\"'`]*).*?[\"'`]",
+    "cn\\(([^)]*)\\)",
+    "(?:'|\"|`)([^']*)(?:'|\"|`)"
   ],
   "tailwindCSS.emmetCompletions": true,
   "editor.quickSuggestions": {
