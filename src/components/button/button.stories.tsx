@@ -10,7 +10,7 @@ import { Button, ButtonProps } from './button';
 
 const meta: Meta<typeof Button> = {
   component: Button,
-  title: 'Shared UI/Button',
+  title: 'Components/Button',
   parameters: {
     layout: 'centered',
   },
@@ -18,7 +18,10 @@ const meta: Meta<typeof Button> = {
   argTypes: {
     variant: {
       control: { type: 'select' },
-      options: ['default', 'flat', 'outline', 'capsule', 'icon'],
+      options: ['primary', 'secondary', 'tertiary'],
+    },
+    loading: {
+      control: { type: 'boolean' },
     },
     color: {
       control: { type: 'inline-radio' },
@@ -59,7 +62,7 @@ export const Default: Story = (args: ButtonProps) => {
 
 Default.args = {
   children: 'Button',
-  variant: 'default',
+  variant: 'primary',
   color: 'default',
   size: 'md',
 };

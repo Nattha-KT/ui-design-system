@@ -20,6 +20,12 @@ export default {
           900: '#111827',
         },
       },
+      backgroundImage: {
+        // btn_loading: 'url(./public/icons/loading-circle-white.png)',
+      },
+      animation: {
+        'spin-slow': 'spin 1s linear infinite',
+      },
     },
   },
   plugins: [animate, radix_tailwind],

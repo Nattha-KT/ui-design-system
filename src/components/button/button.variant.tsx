@@ -1,13 +1,15 @@
 import { type VariantProps, cva } from 'class-variance-authority';
 
 export const buttonVariants = cva(
-  'inline-flex items-center justify-center border-2 text-center font-extrabold ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none',
+  'rounded-lg inline-flex box-border items-center justify-center text-center font-extrabold  transition-colors disabled:pointer-events-none focus:outline-none focus:ring-0',
   {
     variants: {
       variant: {
-        default: 'border-transparent bg-background disabled:text-muted',
-        flat: 'disabled:border-muted disabled:bg-muted disabled:text-muted-foreground',
-        outline:
+        primary:
+          'border-transparent bg-indigo-600 hover:bg-indigo-700 text-white disabled:text-marble-400 disabled:bg-marble-100',
+        secondary:
+          'disabled:border-muted disabled:bg-muted disabled:text-muted-foreground',
+        teriary:
           'bg-background text-foreground disabled:border-muted disabled:text-muted',
         capsule:
           'disabled:border-muted disabled:bg-muted disabled:text-muted-foreground',
@@ -23,125 +25,67 @@ export const buttonVariants = cva(
         'primary-faded': '#DFEEEF',
         errors: '',
       },
+      loading: {
+        default: '',
+        false: '',
+        true: ' gap-x-2 pointer-events-none hover:bg-current',
+      },
       size: {
-        sm: 'h-8 rounded-md px-2 text-sm',
-        md: 'h-10 rounded-md px-4 text-base',
-        lg: 'h-12 rounded-md px-6 text-base',
+        sm: 'h-8 py-2 px-3 text-sm font-semibold',
+        md: 'h-11 px-4 py-[10px] text-base font-semibold',
+        lg: 'h-14 p-4 text-base font-semibold',
       },
     },
     compoundVariants: [
       {
-        variant: ['default', 'icon'],
+        variant: ['primary', 'icon'],
         color: 'default',
-        className: 'hover:bg-foreground/10',
+        loading: [true],
+        className: ' bg-indigo-400',
       },
       {
-        variant: ['default', 'icon'],
+        variant: ['primary', 'icon'],
         color: 'primary',
         className: 'text-primary hover:bg-primary/10',
       },
       {
-        variant: ['default', 'icon'],
+        variant: ['primary', 'icon'],
         color: 'destructive',
         className: 'text-destructive hover:bg-destructive/10',
       },
       {
-        variant: ['flat', 'capsule'],
+        variant: ['secondary', 'capsule'],
         color: 'default',
         className:
           'border-foreground bg-foreground text-background hover:bg-foreground/80',
       },
       {
-        variant: ['outline'],
+        variant: ['secondary'],
         color: 'content',
         className: 'border-content stroke-content text-content',
       },
       {
-        variant: ['flat'],
+        variant: ['secondary'],
         color: 'disable',
         className: 'text-content',
       },
       {
-        variant: ['flat'],
+        variant: ['secondary'],
         color: 'primary-faded',
         className: 'border-primary bg-menu text-primary',
       },
       {
-        variant: ['flat', 'capsule'],
+        variant: ['secondary', 'capsule'],
         color: 'primary',
         className:
           'border-primary bg-primary text-primary-foreground hover:bg-primary/80',
       },
-      // {
-      //   variant: ['flat', 'capsule'],
-      //   color: 'primary-revert',
-      //   className:
-      //     'border-primary bg-primary text-primary-foreground hover:bg-primary/80',
-      // },
-      {
-        variant: ['flat', 'capsule'],
-        color: 'destructive',
-        className:
-          'border-destructive bg-destructive text-destructive-foreground hover:bg-destructive/80',
-      },
-      {
-        variant: 'capsule',
-        size: ['sm', 'md', 'lg'],
-        className: 'rounded-full',
-      },
-      {
-        variant: 'outline',
-        color: 'default',
-        className: 'border-foreground hover:bg-foreground/10',
-      },
-      {
-        variant: 'outline',
-        color: 'primary',
-        className: 'border-primary hover:bg-primary/10',
-      },
-
-      {
-        variant: 'outline',
-        color: 'primary-revert',
-        className:
-          'border-primary-forground bg-primary text-primary-foreground hover:bg-primary-foreground/10',
-      },
-      {
-        variant: 'outline',
-        color: 'destructive',
-        className: 'border-destructive hover:bg-destructive/10',
-      },
-      {
-        variant: 'icon',
-        size: ['sm', 'md', 'lg'],
-        className: 'rounded-full p-0',
-      },
-      {
-        variant: 'icon',
-        size: 'sm',
-        className: 'h-9 w-9',
-      },
-      {
-        variant: 'icon',
-        size: 'md',
-        className: 'h-10 w-10',
-      },
-      {
-        variant: 'icon',
-        size: 'lg',
-        className: 'h-11 w-11',
-      },
-      {
-        variant: 'outline',
-        color: 'errors',
-        className:
-          'border-destructive text-destructive hover:bg-destructive/80',
-      },
     ],
     defaultVariants: {
-      variant: 'default',
+      variant: 'primary',
       color: 'default',
       size: 'md',
+      loading: 'default',
     },
   },
 );
