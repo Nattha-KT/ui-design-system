@@ -1,4 +1,28 @@
+# UI Design System Library
+
+This project is a UI component library developed from a Figma design. The goal of this project is to create reusable, customizable UI components that can be easily integrated into web applications. Each component is crafted to ensure consistency, responsiveness, and a clean, modern interface in line with the Figma design.
+
+## Design system
+
+###
+
+<div align="center">
+  <img height="200" src="./public/figma.png"  />
+</div>
+
+###
+
+- [View more](<https://www.figma.com/design/yVLJLnreOFixR5EbOIt2zH/Free-Accessible-Design-System-(Community)?node-id=1406-1723&m=dev&t=grzyJnuaJGI9wsep-1>) For sample best practive.
+
+###
+
+###
+
 # React + TypeScript + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -22,7 +46,7 @@ export default tseslint.config({
       tsconfigRootDir: import.meta.dirname,
     },
   },
-})
+});
 ```
 
 - Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
@@ -31,7 +55,7 @@ export default tseslint.config({
 
 ```js
 // eslint.config.js
-import react from 'eslint-plugin-react'
+import react from 'eslint-plugin-react';
 
 export default tseslint.config({
   // Set the react version
@@ -46,5 +70,5 @@ export default tseslint.config({
     ...react.configs.recommended.rules,
     ...react.configs['jsx-runtime'].rules,
   },
-})
+});
 ```
