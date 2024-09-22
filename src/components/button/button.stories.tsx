@@ -1,10 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 // import { within } from '@storybook/testing-library';
 // import { expect } from '@storybook/jest';
-import { fn } from '@storybook/test';
-// import { FaRegCalendar } from 'react-icons/fa6';
 
-import { colors, sizes } from '@/libs';
+import { sizes } from '@/libs';
 import { EyeIcon } from '@heroicons/react/16/solid';
 import { Button, ButtonProps } from './button';
 
@@ -23,48 +21,81 @@ const meta: Meta<typeof Button> = {
     loading: {
       control: { type: 'boolean' },
     },
-    color: {
-      control: { type: 'inline-radio' },
-      options: colors,
-    },
+    // color: {
+    //   control: { type: 'inline-radio' },
+    //   options: colors,
+    // },
     size: {
       control: { type: 'inline-radio' },
       options: sizes,
     },
+    icon: {
+      control: { type: 'inline-radio' },
+      options: ['non', 'right', 'left'],
+    },
     disabled: {
       control: { type: 'boolean' },
     },
-    style: {
-      control: { type: 'object' },
+    asChild: {
+      control: { type: 'boolean' },
     },
     backgroundColor: { control: 'color' },
   },
-  args: { onClick: fn() },
+  // args: { onClick: fn() },
 };
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const Default: Story = (args: ButtonProps) => {
-  if (args.variant === 'icon') {
-    return <Button {...args}>{<EyeIcon />}</Button>;
-  }
+export const Primary: Story = (args: ButtonProps) => {
+  const content = args.asChild ? (
+    <a href="#">{args.children}</a>
+  ) : (
+    args.children
+  );
+  const icon = args.icon !== 'non' ? <EyeIcon className="w-5" /> : undefined;
 
-  // if (args.asChild) {
-  //   return (
-  //     <Button {...args}>
-  //       <a href="#">{args.children}</a>
-  //     </Button>
-  //   );
-  // }
-
-  return <Button {...args} />;
+  return (
+    <Button useIcon={icon} {...args}>
+      {content}
+    </Button>
+  );
 };
 
-Default.args = {
-  children: 'Button',
+Primary.args = {
+  children: 'Click me',
   variant: 'primary',
-  color: 'default',
+  // color: 'default',
   size: 'md',
+  icon: 'non',
+  loading: false,
+  asChild: false,
+  disabled: false,
+};
+
+export const Secindary: Story = {
+  args: {
+    children: 'Click me',
+    variant: 'secondary',
+    // color: 'default',
+    size: 'md',
+    icon: 'non',
+    loading: false,
+    asChild: false,
+    disabled: false,
+  },
+};
+
+export const Tertiary: Story = {
+  args: {
+    children: 'Click me',
+    variant: 'tertiary',
+    // color: 'default',
+    size: 'md',
+    icon: 'non',
+    loading: false,
+    asChild: false,
+    disabled: false,
+  },
 };
 
 // export const Heading: Story = {

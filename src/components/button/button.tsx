@@ -1,6 +1,6 @@
 import { LoadingBtnIcon } from '@/libs';
 import { cn } from '@/libs/utils';
-import { Slot } from '@radix-ui/react-slot';
+import { Slot, Slottable } from '@radix-ui/react-slot';
 import { ComponentPropsWithoutRef, forwardRef } from 'react';
 import { ButtonVariantProps, buttonVariants } from './button.variant';
 
@@ -8,15 +8,18 @@ export type ButtonProps = ComponentPropsWithoutRef<'button'> & {
   asChild?: boolean;
   backgroundColor?: string;
   loading?: boolean;
+  useIcon?: React.ReactNode;
 } & ButtonVariantProps;
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       className,
+      useIcon,
       variant,
       color,
       size,
+      icon,
       loading = false,
       asChild = false,
       children,
@@ -29,14 +32,14 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const Component = asChild ? Slot : 'button';
 
     const buttonClasses = cn(
-      buttonVariants({ variant, color, size, loading }),
+      buttonVariants({ variant, color, size, loading, icon }),
       className,
     );
 
     const loadingIcon = (
       <LoadingBtnIcon
         className={cn('animate-spin-slow', {
-          hidden: disabled,
+          hidden: !loading || disabled,
         })}
       />
     );
@@ -49,8 +52,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         style={{ backgroundColor }}
         {...props}
       >
-        {children}
-        {loading && loadingIcon}
+        <Slottable>{children}</Slottable>
+        {!loading && useIcon}
+        {loadingIcon}
       </Component>
     );
   },

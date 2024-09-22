@@ -6,7 +6,7 @@ export function LoadingBtnIcon({ className, ...props }: IconImageProps) {
     <img
       className={cn('', className)}
       {...props}
-      src="../public/icons/loading-circle-white.svg"
+      src="icons/loading-circle-white.svg"
       alt="spinloading"
     />
   );
