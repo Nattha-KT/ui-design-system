@@ -38,6 +38,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     const loadingIcon = (
       <LoadingBtnIcon
+        variant={variant}
         className={cn('animate-spin-slow', {
           hidden: !loading || disabled,
         })}

@@ -21,10 +21,6 @@ const meta: Meta<typeof Button> = {
     loading: {
       control: { type: 'boolean' },
     },
-    // color: {
-    //   control: { type: 'inline-radio' },
-    //   options: colors,
-    // },
     size: {
       control: { type: 'inline-radio' },
       options: sizes,
@@ -46,57 +42,41 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const Primary: Story = (args: ButtonProps) => {
-  const content = args.asChild ? (
-    <a href="#">{args.children}</a>
-  ) : (
-    args.children
-  );
-  const icon = args.icon !== 'non' ? <EyeIcon className="w-5" /> : undefined;
+// Function to create a Story object for Storybook
+const createStory = (variant: ButtonProps['variant']): Story => {
+  return {
+    render: (args: ButtonProps) => {
+      const content = args.asChild ? (
+        <a href="#">{args.children}</a>
+      ) : (
+        args.children
+      );
+      const icon =
+        args.icon !== 'non' ? <EyeIcon className="w-5" /> : undefined;
 
-  return (
-    <Button useIcon={icon} {...args}>
-      {content}
-    </Button>
-  );
+      return (
+        <Button useIcon={icon} {...args}>
+          {content}
+        </Button>
+      );
+    },
+    args: {
+      children: 'Click me',
+      variant: variant,
+      size: 'md',
+      icon: 'non',
+      loading: false,
+      asChild: false,
+      disabled: false,
+    },
+  };
 };
 
-Primary.args = {
-  children: 'Click me',
-  variant: 'primary',
-  // color: 'default',
-  size: 'md',
-  icon: 'non',
-  loading: false,
-  asChild: false,
-  disabled: false,
-};
+export const Primary = createStory('primary');
 
-export const Secindary: Story = {
-  args: {
-    children: 'Click me',
-    variant: 'secondary',
-    // color: 'default',
-    size: 'md',
-    icon: 'non',
-    loading: false,
-    asChild: false,
-    disabled: false,
-  },
-};
+export const Secondary = createStory('secondary');
 
-export const Tertiary: Story = {
-  args: {
-    children: 'Click me',
-    variant: 'tertiary',
-    // color: 'default',
-    size: 'md',
-    icon: 'non',
-    loading: false,
-    asChild: false,
-    disabled: false,
-  },
-};
+export const Tertiary = createStory('tertiary');
 
 // export const Heading: Story = {
 //   args: {},

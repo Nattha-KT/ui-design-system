@@ -6,11 +6,11 @@ export const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          'border-transparent bg-indigo-600 hover:bg-indigo-700 text-white disabled:text-marble-400 disabled:bg-marble-100',
+          ' bg-indigo-600 hover:bg-indigo-700 text-white disabled:text-marble-400 disabled:bg-marble-100',
         secondary:
-          'disabled:border-muted disabled:bg-muted disabled:text-muted-foreground',
+          ' bg-marble-100 hover:bg-marble-200 text-marble-900 disabled:text-marble-400 disabled:bg-marble-100',
         tertiary:
-          'bg-background text-foreground disabled:border-muted disabled:text-muted',
+          ' bg-transparent hover:bg-marble-100 text-marble-600 disabled:text-marble-400 ',
       },
       color: {
         default: '',
@@ -41,7 +41,6 @@ export const buttonVariants = cva(
     compoundVariants: [
       {
         variant: ['primary'],
-        color: 'default',
         loading: [true],
         className: ' bg-indigo-400',
       },
@@ -52,9 +51,21 @@ export const buttonVariants = cva(
         className: ' flex-row',
       },
       {
-        variant: ['primary'],
-        color: 'destructive',
-        className: 'text-destructive hover:bg-destructive/10',
+        variant: ['secondary'],
+        loading: [true],
+        className: ' text-marble-500',
+      },
+
+      {
+        variant: ['secondary'],
+        icon: 'left',
+        loading: [true],
+        className: ' flex-row ',
+      },
+      {
+        variant: ['tertiary'],
+        loading: [true],
+        className: ' text-marble-500',
       },
     ],
     defaultVariants: {
