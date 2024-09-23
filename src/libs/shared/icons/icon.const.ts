@@ -4,3 +4,5 @@ export const loadingIconPairColor = {
   ['secondary']: ['#64748B', '#64748B'],
   ['tertiary']: ['#64748B', '#64748B'],
 };
+
+export const defaultIconSize = ' w-5';

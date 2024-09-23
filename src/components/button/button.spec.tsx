@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { Button } from './button';
 
 describe('Button', () => {
-  it('should render successfully', () => {
+  it('Button should render successfully', () => {
     const { baseElement } = render(<Button />);
     expect(baseElement).toBeTruthy();
   });

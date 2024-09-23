@@ -1,4 +1,4 @@
-import { cn, loadingIconPairColor } from '@/libs';
+import { cn, defaultIconSize, loadingIconPairColor } from '@/libs';
 import { IconSvgProps } from './icon.type';
 
 export type CustomIconProps = IconSvgProps & {
@@ -7,12 +7,13 @@ export type CustomIconProps = IconSvgProps & {
 
 export function LoadingBtnIcon({
   variant = 'default',
+  size = defaultIconSize,
   className,
   ...props
 }: CustomIconProps) {
   return (
     <svg
-      className={cn('', className)}
+      className={cn(`${size}`, className)}
       width="20"
       height="20"
       viewBox="0 0 20 20"
