@@ -2,6 +2,9 @@ import { CogIcon } from '@heroicons/react/16/solid';
 import { useState } from 'react';
 import { Button } from './components';
 import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
   Tooltip,
   TooltipContent,
   TooltipProvider,
@@ -11,7 +14,7 @@ import {
 function App() {
   const [toggleButton, setToggleButton] = useState<boolean>(false);
   return (
-    <main className="mx-auto flex h-[100vh] items-center justify-center">
+    <main className="mx-auto flex h-[100vh] items-center justify-center gap-4">
       <TooltipProvider>
         <Tooltip open={false}>
           <TooltipTrigger>
@@ -34,6 +37,10 @@ function App() {
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
+      <Avatar>
+        <AvatarImage src="https://github.com/shadcn.png" />
+        <AvatarFallback>CN</AvatarFallback>
+      </Avatar>
     </main>
   );
 }
