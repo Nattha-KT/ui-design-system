@@ -27,11 +27,6 @@ export const buttonVariants = cva(
         false: '',
         true: ' pointer-events-none hover:bg-current',
       },
-      icon: {
-        non: '',
-        left: ' flex-row-reverse',
-        right: 'flex-row',
-      },
       size: {
         sm: ' h-8 py-2 px-3 text-sm ',
         md: ' h-11 px-4 py-[10px] text-base ',
@@ -45,22 +40,9 @@ export const buttonVariants = cva(
         className: ' bg-indigo-400',
       },
       {
-        variant: ['primary'],
-        icon: 'left',
-        loading: [true],
-        className: ' flex-row',
-      },
-      {
         variant: ['secondary'],
         loading: [true],
         className: ' text-marble-500',
-      },
-
-      {
-        variant: ['secondary'],
-        icon: 'left',
-        loading: [true],
-        className: ' flex-row ',
       },
       {
         variant: ['tertiary'],

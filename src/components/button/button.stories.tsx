@@ -3,7 +3,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 // import { expect } from '@storybook/jest';
 
 import { sizes } from '@/libs';
-import { EyeIcon } from '@heroicons/react/16/solid';
 import { Button, ButtonProps } from './button';
 
 const meta: Meta<typeof Button> = {
@@ -24,10 +23,6 @@ const meta: Meta<typeof Button> = {
     size: {
       control: { type: 'inline-radio' },
       options: sizes,
-    },
-    icon: {
-      control: { type: 'inline-radio' },
-      options: ['non', 'right', 'left'],
     },
     disabled: {
       control: { type: 'boolean' },
@@ -51,20 +46,13 @@ const createStory = (variant: ButtonProps['variant']): Story => {
       ) : (
         args.children
       );
-      const icon =
-        args.icon !== 'non' ? <EyeIcon className="w-5" /> : undefined;
 
-      return (
-        <Button useIcon={icon} {...args}>
-          {content}
-        </Button>
-      );
+      return <Button {...args}>{content}</Button>;
     },
     args: {
       children: 'Click me',
       variant: variant,
       size: 'md',
-      icon: 'non',
       loading: false,
       asChild: false,
       disabled: false,

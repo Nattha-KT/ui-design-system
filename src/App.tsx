@@ -1,6 +1,5 @@
 import { CogIcon } from '@heroicons/react/16/solid';
 import { useState } from 'react';
-import './App.css';
 import { Button } from './components';
 import {
   Tooltip,
@@ -17,14 +16,13 @@ function App() {
         <Tooltip open={false}>
           <TooltipTrigger>
             <Button
-              icon={'right'}
               loading={toggleButton}
               onClick={() => setToggleButton((item) => !item)}
               size="md"
               variant="primary"
-              useIcon={<CogIcon className="w-5" />}
             >
               Click Me
+              {!toggleButton && <CogIcon className="w-5" />}
             </Button>
           </TooltipTrigger>
           <TooltipContent

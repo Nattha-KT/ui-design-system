@@ -8,18 +8,15 @@ export type ButtonProps = ComponentPropsWithoutRef<'button'> & {
   asChild?: boolean;
   backgroundColor?: string;
   loading?: boolean;
-  useIcon?: React.ReactNode;
 } & ButtonVariantProps;
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       className,
-      useIcon,
       variant,
       color,
       size,
-      icon,
       loading = false,
       asChild = false,
       children,
@@ -32,7 +29,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const Component = asChild ? Slot : 'button';
 
     const buttonClasses = cn(
-      buttonVariants({ variant, color, size, loading, icon }),
+      buttonVariants({ variant, color, size, loading }),
       className,
     );
 
@@ -54,7 +51,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       >
         <Slottable>{children}</Slottable>
-        {!loading && useIcon}
         {loadingIcon}
       </Component>
     );
