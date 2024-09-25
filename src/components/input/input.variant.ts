@@ -1,14 +1,15 @@
 import { type VariantProps, cva } from 'class-variance-authority';
 
 export const inputVariants = cva(
-  'group flex items-center border-marble-400 overflow-hidden text-base font-normal w-[200px] hover:border-marble-500 rounded-lg  active:border-indigo-200 border bg-background transition-colors file:border-transparent file:bg-transparent file:font-semibold focus-within:outline-none disabled:cursor-not-allowed disabled:opacity-50',
+  'group flex items-center focus-within:outline focus-within:outline-offset-1 hover:border-marble-500 focus-within:outline-2 border-marble-400 overflow-hidden  text-base font-normal w-[200px]  rounded-lg border bg-background transition-colors file:border-transparent file:bg-transparent file:font-semibold disabled:cursor-not-allowed disabled:opacity-50',
   {
     variants: {
       variant: {
-        default: '[&>*]:text-marble-900',
+        default: ' [&>input]:text-marble-800   [&>div]:text-marble-400',
       },
       color: {
-        default: ' ',
+        default:
+          ' outline-indigo-200  focus-within:border-indigo-500 focus-within:hover:border-indigo-500 ',
         primary: 'focus-within:border-primary focus-within:text-primary',
         destructive:
           'focus-within:border-destructive focus-within:text-destructive',
@@ -22,7 +23,7 @@ export const inputVariants = cva(
     defaultVariants: {
       variant: 'default',
       color: 'default',
-      size: 'md',
+      size: 'sm',
     },
   },
 );
