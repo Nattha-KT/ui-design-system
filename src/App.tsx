@@ -1,6 +1,7 @@
 import { CogIcon } from '@heroicons/react/16/solid';
 import { useState } from 'react';
 import { Button, Input } from './components';
+import { Textarea } from './components/textarea/textarea';
 import {
   Label,
   Tooltip,
@@ -38,6 +39,7 @@ function App() {
       <div className="grid w-full max-w-sm items-center gap-1.5">
         <Label htmlFor="picture">Email</Label>
         <Input color="primary" type="email" placeholder="Email" />
+        <Textarea placeholder="Type your message here." />
       </div>
     </main>
   );

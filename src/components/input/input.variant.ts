@@ -11,7 +11,7 @@ export const inputVariants = cva(
         default: ' outline-none',
         primary:
           'outline-indigo-200  focus-within:border-indigo-500 focus-within:hover:border-indigo-500',
-        destructive: ' outline-none border-rose-400 hover:border-rose-400 ',
+        destructive: ' outline-none border-rose-400 hover:border-rose-600',
       },
       size: {
         sm: ' text-sm h-9',
