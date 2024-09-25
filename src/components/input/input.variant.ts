@@ -1,7 +1,7 @@
 import { type VariantProps, cva } from 'class-variance-authority';
 
 export const inputVariants = cva(
-  'group flex items-center focus-within:outline focus-within:outline-offset-1 hover:border-marble-500 focus-within:outline-2 border-marble-400 overflow-hidden  text-base font-normal w-[200px]  rounded-lg border bg-background transition-colors file:border-transparent file:bg-transparent file:font-semibold disabled:cursor-not-allowed disabled:opacity-50',
+  'group flex items-center focus-within:outline focus-within:outline-offset-0 hover:border-marble-500 focus-within:outline-2 border-marble-400 overflow-hidden  text-base font-normal w-[200px]  rounded-lg border bg-background transition-colors file:border-transparent file:bg-transparent file:font-semibold disabled:cursor-not-allowed disabled:opacity-50',
   {
     variants: {
       variant: {
@@ -10,7 +10,7 @@ export const inputVariants = cva(
       color: {
         default: ' outline-none',
         primary:
-          'outline-indigo-200  focus-within:border-indigo-500 focus-within:hover:border-indigo-500',
+          ' outline-indigo-200  focus-within:border-indigo-500 focus-within:hover:border-indigo-500',
         destructive: ' outline-none border-rose-400 hover:border-rose-600',
       },
       size: {
