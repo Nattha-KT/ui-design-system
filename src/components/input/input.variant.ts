@@ -8,11 +8,10 @@ export const inputVariants = cva(
         default: ' [&>input]:text-marble-800   [&>div]:text-marble-400',
       },
       color: {
-        default:
-          ' outline-indigo-200  focus-within:border-indigo-500 focus-within:hover:border-indigo-500 ',
-        primary: 'focus-within:border-primary focus-within:text-primary',
-        destructive:
-          'focus-within:border-destructive focus-within:text-destructive',
+        default: ' outline-none',
+        primary:
+          'outline-indigo-200  focus-within:border-indigo-500 focus-within:hover:border-indigo-500',
+        destructive: ' outline-none border-rose-400 hover:border-rose-400 ',
       },
       size: {
         sm: ' text-sm h-9',

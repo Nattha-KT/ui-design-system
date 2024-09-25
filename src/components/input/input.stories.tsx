@@ -45,4 +45,5 @@ Default.args = {
   color: 'default',
   prefix: null,
   suffix: null,
+  invalid: 'valition test',
 };
