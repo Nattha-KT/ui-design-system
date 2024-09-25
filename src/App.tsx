@@ -1,10 +1,8 @@
 import { CogIcon } from '@heroicons/react/16/solid';
 import { useState } from 'react';
-import { Button } from './components';
+import { Button, Input } from './components';
 import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
+  Label,
   Tooltip,
   TooltipContent,
   TooltipProvider,
@@ -37,10 +35,10 @@ function App() {
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
-      <Avatar>
-        <AvatarImage src="https://github.com/shadcn.png" />
-        <AvatarFallback>CN</AvatarFallback>
-      </Avatar>
+      <div className="grid w-full max-w-sm items-center gap-1.5">
+        <Label htmlFor="picture">Email</Label>
+        <Input color="primary" type="email" placeholder="Email" />
+      </div>
     </main>
   );
 }
