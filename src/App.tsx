@@ -4,6 +4,7 @@ import { Button, Input } from './components';
 import { Textarea } from './components/textarea/textarea';
 import {
   Label,
+  PasswordStrengthMeter,
   Tooltip,
   TooltipContent,
   TooltipProvider,
@@ -13,7 +14,7 @@ import {
 function App() {
   const [toggleButton, setToggleButton] = useState<boolean>(false);
   return (
-    <main className="mx-auto flex h-[100vh] items-center justify-center gap-4">
+    <main className="mx-auto flex h-[100vh] flex-col items-center justify-center gap-4">
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger>
@@ -37,6 +38,7 @@ function App() {
         <Input color="primary" type="password" placeholder="Email" />
         <Textarea placeholder="Type your message here." />
       </div>
+      <PasswordStrengthMeter password="Passwr$1542" />
     </main>
   );
 }
