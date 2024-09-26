@@ -5,7 +5,7 @@ import {
   PasswordInputVariantProps,
   passwordInputVariants,
 } from './password-input.variant';
-import { PasswordToggleIcon } from './paswordToggleIcon';
+import { PasswordToggleIcon } from './password-toggle-icon';
 export type InputPasswordProps = Omit<
   React.ComponentPropsWithRef<'input'>,
   'prefix'
