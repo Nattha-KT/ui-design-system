@@ -1,4 +1,4 @@
-import { cn } from '@/libs/utils';
+import { cn } from '@/libs';
 import { Slot } from '@radix-ui/react-slot';
 import { ComponentPropsWithoutRef, forwardRef } from 'react';
 import {

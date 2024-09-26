@@ -1,5 +1,4 @@
-import { LoadingBtnIcon } from '@/libs';
-import { cn } from '@/libs/utils';
+import { cn, LoadingBtnIcon } from '@/libs';
 import { Slot, Slottable } from '@radix-ui/react-slot';
 import { ComponentPropsWithoutRef, forwardRef } from 'react';
 import { ButtonVariantProps, buttonVariants } from './button.variant';
