@@ -1,1 +1,1 @@
-export * from './password-strength';
+export * from './psw-meter.util';

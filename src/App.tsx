@@ -1,10 +1,9 @@
 import { CogIcon } from '@heroicons/react/16/solid';
 import { useState } from 'react';
-import { Button, Input } from './components';
+import { Button, Input, StrengthIndicator } from './components';
 import { Textarea } from './components/textarea/textarea';
 import {
   Label,
-  PasswordStrengthMeter,
   Tooltip,
   TooltipContent,
   TooltipProvider,
@@ -38,7 +37,9 @@ function App() {
         <Input color="primary" type="password" placeholder="Email" />
         <Textarea placeholder="Type your message here." />
       </div>
-      <PasswordStrengthMeter password="Passwr$1542" />
+      <div className="w-[300px]">
+        <StrengthIndicator input="4sd345@542" />
+      </div>
     </main>
   );
 }
