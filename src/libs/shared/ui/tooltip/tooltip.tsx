@@ -14,6 +14,10 @@ const Tooltip = TooltipPrimitive.Root;
 
 const TooltipTrigger = TooltipPrimitive.Trigger;
 
+const TooltipPortal = TooltipPrimitive.Portal;
+
+const TooltipArrow = TooltipPrimitive.Arrow;
+
 const TooltipContent = forwardRef<
   ElementRef<typeof TooltipPrimitive.Content>,
   TooltipProps
@@ -28,4 +32,11 @@ const TooltipContent = forwardRef<
 
 TooltipContent.displayName = TooltipPrimitive.Content.displayName;
 
-export { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger };
+export {
+  Tooltip,
+  TooltipArrow,
+  TooltipContent,
+  TooltipPortal,
+  TooltipProvider,
+  TooltipTrigger,
+};

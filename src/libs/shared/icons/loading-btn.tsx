@@ -1,6 +1,5 @@
 import { cn, defaultIconSize, loadingIconPairColor } from '@/libs';
-import { IconSvgProps } from './icon.type';
-
+import { IconSvgProps } from '@/types';
 export type CustomIconProps = IconSvgProps & {
   variant?: keyof typeof loadingIconPairColor | null;
 };

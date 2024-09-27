@@ -3,7 +3,15 @@ import {
   defaultFeedbackLevels,
   defaultFeedbackTextColor,
 } from '@/constant';
+import {
+  Tooltip,
+  TooltipArrow,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/libs';
 import { calculatePasswordStrength, cn } from '@/libs/utils';
+import { ExclamationCircleIcon } from '@heroicons/react/24/outline';
 import React, { ComponentPropsWithoutRef, useMemo } from 'react';
 
 export type PasswordStrengthProps = ComponentPropsWithoutRef<'div'> & {
@@ -15,6 +23,7 @@ export type PasswordStrengthProps = ComponentPropsWithoutRef<'div'> & {
   penaltyForSequential?: number;
   bgColorFeedback?: string[];
   textColorFeedback?: string[];
+  suggestion?: React.ReactNode;
 };
 
 const StrengthIndicator: React.FC<PasswordStrengthProps> = ({
@@ -26,6 +35,7 @@ const StrengthIndicator: React.FC<PasswordStrengthProps> = ({
   varietyBonus = 2, // Bonus for using all character types
   penaltyForRepeating = 1, // Penalty for repeating characters
   penaltyForSequential = 1, // Penalty for sequential characters
+  // suggestion,
   className,
   ...props
 }) => {
@@ -64,14 +74,47 @@ const StrengthIndicator: React.FC<PasswordStrengthProps> = ({
       {...props}
     >
       <div className="flex h-1 w-full gap-1 rounded-full">{progressBars}</div>
-      <p
-        className={cn(
-          'text-xs font-semibold text-marble-500',
-          textColorFeedback[indexOffeedback],
-        )}
-      >
-        {input && feedback}
-      </p>
+      <div className="flex w-full items-center justify-end gap-x-1">
+        <p
+          className={cn(
+            'text-xs font-semibold text-marble-500',
+            textColorFeedback[indexOffeedback],
+          )}
+        >
+          {input && feedback}
+        </p>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <ExclamationCircleIcon className="w-5 text-marble-400" />
+            </TooltipTrigger>
+
+            <TooltipContent
+              align={'end'}
+              side="bottom"
+              sideOffset={4}
+              variant={'arrow'}
+              className={cn(
+                'relative left-4 w-52 rounded-lg border border-gray-200 bg-white p-4 text-gray-700 shadow-md',
+              )}
+            >
+              <p>
+                Your password is easy to guess. Try to add more different
+                characters.
+              </p>
+              <TooltipArrow
+                width={10}
+                height={10}
+                asChild
+                className="relative left-4"
+              >
+                <div className="bottom-[0.4rem] size-3 origin-center rotate-45 border-b border-r border-gray-200 bg-white shadow-2xl shadow-inherit"></div>
+                {/* <TooltipArrowSvg className="bg-slate-900" /> */}
+              </TooltipArrow>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      </div>
     </div>
   );
 };
