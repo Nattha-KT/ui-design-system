@@ -3,33 +3,25 @@ import {
   defaultFeedbackLevels,
   defaultFeedbackTextColor,
 } from '@/constant';
-import {
-  Tooltip,
-  TooltipArrow,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/libs';
 import { calculatePasswordStrength, cn } from '@/libs/utils';
-import { ExclamationCircleIcon } from '@heroicons/react/24/outline';
 import React, { ComponentPropsWithoutRef, useMemo } from 'react';
 
-export type PasswordStrengthProps = ComponentPropsWithoutRef<'div'> & {
-  input: string;
+export type IndicatorProps = ComponentPropsWithoutRef<'div'> & {
+  input?: string;
   feedbackLevels?: string[];
   minLength?: number;
   varietyBonus?: number;
   penaltyForRepeating?: number;
   penaltyForSequential?: number;
-  bgColorFeedback?: string[];
+  barColorFeedback?: string[];
   textColorFeedback?: string[];
-  suggestion?: React.ReactNode;
+  counsel?: React.ReactNode;
 };
 
-const StrengthIndicator: React.FC<PasswordStrengthProps> = ({
-  input,
+const Indicator: React.FC<IndicatorProps> = ({
+  input = '',
   feedbackLevels = defaultFeedbackLevels,
-  bgColorFeedback = defaultFeedbackBgColor,
+  barColorFeedback = defaultFeedbackBgColor,
   textColorFeedback = defaultFeedbackTextColor,
   minLength = 4, // Minimum length for base score
   varietyBonus = 2, // Bonus for using all character types
@@ -37,6 +29,7 @@ const StrengthIndicator: React.FC<PasswordStrengthProps> = ({
   penaltyForSequential = 1, // Penalty for sequential characters
   // suggestion,
   className,
+  counsel,
   ...props
 }) => {
   const { feedback, indexOffeedback } = calculatePasswordStrength(
@@ -52,7 +45,8 @@ const StrengthIndicator: React.FC<PasswordStrengthProps> = ({
   const progressBars = useMemo(() => {
     return feedbackLevels.map((_, index) => {
       const isActive = index <= indexOffeedback;
-      const bgColor = input && isActive ? bgColorFeedback[indexOffeedback] : '';
+      const bgColor =
+        input && isActive ? barColorFeedback[indexOffeedback] : '';
       return (
         <div
           key={index}
@@ -63,7 +57,7 @@ const StrengthIndicator: React.FC<PasswordStrengthProps> = ({
         />
       );
     });
-  }, [feedbackLevels, bgColorFeedback, indexOffeedback, input]);
+  }, [feedbackLevels, barColorFeedback, indexOffeedback, input]);
 
   return (
     <div
@@ -83,32 +77,11 @@ const StrengthIndicator: React.FC<PasswordStrengthProps> = ({
         >
           {input && feedback}
         </p>
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <ExclamationCircleIcon className="w-5 text-marble-400" />
-            </TooltipTrigger>
-            <TooltipContent
-              align="end"
-              className="w-52 rounded-lg border border-gray-200 bg-white p-4 text-marble-900 shadow-md radix-align-end:left-4 radix-align-start:right-4"
-              side="bottom"
-              sideOffset={4}
-              variant="arrow"
-            >
-              <p>
-                Your password is easy to guess. Try to add more different
-                characters.
-              </p>
-              <TooltipArrow asChild className="relative">
-                <div className="bottom-[0.3rem] left-4 size-3 origin-center rotate-45 border-b border-r border-gray-200 bg-white shadow-2xl" />
-              </TooltipArrow>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
+        {counsel}
       </div>
     </div>
   );
 };
 
-StrengthIndicator.displayName = 'StrengthIndicator';
-export { StrengthIndicator };
+Indicator.displayName = 'Indicator';
+export { Indicator };

@@ -1,1 +1,1 @@
-export * from './psw-meter';
+export * from './indicator';
