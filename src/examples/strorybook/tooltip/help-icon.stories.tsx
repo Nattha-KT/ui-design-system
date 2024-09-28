@@ -1,25 +1,32 @@
-import { Button } from '@/components';
 import {
+  cn,
   Tooltip,
   TooltipContent,
   TooltipProps,
   TooltipProvider,
   TooltipTrigger,
 } from '@/libs';
+import { ExclamationCircleIcon } from '@heroicons/react/24/outline';
 import type { Meta, StoryObj } from '@storybook/react';
+
+// type TooltipStory = {
+//   arrow: React.ReactNode;
+// } & Omit<React.ComponentProps<typeof TooltipContent>, 'children'>;
 
 const meta: Meta<typeof TooltipContent> = {
   component: TooltipContent,
-  title: 'Examples/Tooltip',
+  title: 'Examples/Tooltip/help-icon',
   parameters: {
     layout: 'centered',
+    // docs: {
+    //   story: {
+    //     inline: false,
+    //     iframeHeight: 200,
+    //   },
+    // },
   },
   tags: ['autodocs'],
   argTypes: {
-    variant: {
-      control: { type: 'select' },
-      options: ['default', 'suggest'],
-    },
     side: {
       control: { type: 'inline-radio' },
       options: ['bottom', 'top', 'right', 'left'],
@@ -32,6 +39,10 @@ const meta: Meta<typeof TooltipContent> = {
       control: { type: 'inline-radio' },
       options: ['sm', 'md', 'lg'],
     },
+    align: {
+      control: { type: 'inline-radio' },
+      options: ['center', 'end', 'start'],
+    },
   },
 };
 export default meta;
@@ -43,30 +54,37 @@ const createStory = (variant: TooltipProps['variant']): Story => {
       return (
         <TooltipProvider>
           <Tooltip>
-            <TooltipTrigger>
-              <Button variant={'secondary'} size={'sm'}>
-                {args.children}
-              </Button>
+            <TooltipTrigger asChild>
+              <ExclamationCircleIcon className="w-5 text-marble-400" />
             </TooltipTrigger>
+
             <TooltipContent
               side={args.side}
               sideOffset={args.sideOffset}
               {...args}
+              variant={variant}
+              className={cn(
+                'relative w-52 rounded-lg border border-gray-200 bg-white p-4 text-marble-900 shadow-md',
+                variant === 'arrow' ? 'left-4' : '',
+              )}
             >
-              <p>Add to library</p>
+              <p>
+                Your password is easy to guess. Try to add more different
+                characters.
+              </p>
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>
       );
     },
     args: {
-      children: 'Hover here',
-      variant: variant,
-      side: 'top',
-      sideOffset: 0,
+      side: 'bottom',
+      sideOffset: 4,
       size: 'sm',
+      align: 'end',
     },
   };
 };
 
-export const Default = createStory('default');
+// Stories for Default and Arrow variants
+export const Default: Story = createStory('default');

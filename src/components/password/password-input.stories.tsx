@@ -4,7 +4,7 @@ import { InputPasswordProps, PasswordInput } from './password-input';
 
 const meta: Meta<typeof PasswordInput> = {
   component: PasswordInput,
-  title: 'Components/PasswordInput',
+  title: 'Components/Password',
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
@@ -29,7 +29,5 @@ export const Default: Story = (args: InputPasswordProps) => {
 
 Default.args = {
   placeholder: 'Password',
-  variant: 'default',
   color: 'default',
-  //   invalid: 'valition test',
 };

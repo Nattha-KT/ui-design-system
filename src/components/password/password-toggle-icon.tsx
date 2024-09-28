@@ -36,10 +36,11 @@ export const PasswordToggleIcon = ({
           )}
         </TooltipTrigger>
         <TooltipContent
+          align={'start'}
           side="bottom"
           sideOffset={0}
           variant="suggest"
-          className="left-20"
+          className="left-8"
         >
           <p>{isPasswordVisible ? 'Hide password' : 'Show password'}</p>
         </TooltipContent>

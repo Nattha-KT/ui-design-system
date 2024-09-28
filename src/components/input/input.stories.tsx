@@ -41,9 +41,8 @@ export const Default: Story = (args: InputProps) => {
 
 Default.args = {
   placeholder: 'Placeholder',
-  variant: 'default',
   color: 'default',
   prefix: null,
   suffix: null,
-  invalid: 'valition test',
+  invalid: ' ',
 };

@@ -88,28 +88,19 @@ const StrengthIndicator: React.FC<PasswordStrengthProps> = ({
             <TooltipTrigger asChild>
               <ExclamationCircleIcon className="w-5 text-marble-400" />
             </TooltipTrigger>
-
             <TooltipContent
-              align={'end'}
+              align="end"
+              className="w-52 rounded-lg border border-gray-200 bg-white p-4 text-marble-900 shadow-md radix-align-end:left-4 radix-align-start:right-4"
               side="bottom"
               sideOffset={4}
-              variant={'arrow'}
-              className={cn(
-                'relative left-4 w-52 rounded-lg border border-gray-200 bg-white p-4 text-gray-700 shadow-md',
-              )}
+              variant="arrow"
             >
               <p>
                 Your password is easy to guess. Try to add more different
                 characters.
               </p>
-              <TooltipArrow
-                width={10}
-                height={10}
-                asChild
-                className="relative left-4"
-              >
-                <div className="bottom-[0.4rem] size-3 origin-center rotate-45 border-b border-r border-gray-200 bg-white shadow-2xl shadow-inherit"></div>
-                {/* <TooltipArrowSvg className="bg-slate-900" /> */}
+              <TooltipArrow asChild className="relative">
+                <div className="bottom-[0.3rem] left-4 size-3 origin-center rotate-45 border-b border-r border-gray-200 bg-white shadow-2xl" />
               </TooltipArrow>
             </TooltipContent>
           </Tooltip>
