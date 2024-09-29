@@ -1,1 +1,1 @@
-export * from './tooltip';
+export * from './password-strength';
