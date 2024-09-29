@@ -1,10 +1,10 @@
+import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline';
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@/libs';
-import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline';
+} from '../tooltip';
 
 export const PasswordToggleIcon = ({
   isPasswordVisible,

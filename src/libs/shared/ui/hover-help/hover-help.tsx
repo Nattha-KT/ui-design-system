@@ -1,14 +1,13 @@
+import { cn, createPositionClass } from '@/libs';
+import React, { ElementRef, forwardRef } from 'react';
 import {
-  cn,
-  createPositionClass,
   Tooltip,
   TooltipArrow,
   TooltipContent,
   TooltipProps,
   TooltipProvider,
   TooltipTrigger,
-} from '@/libs';
-import React, { ElementRef, forwardRef } from 'react';
+} from '../../../../components/tooltip';
 
 export type HoverHelpProps = TooltipProps & {
   message?: string;

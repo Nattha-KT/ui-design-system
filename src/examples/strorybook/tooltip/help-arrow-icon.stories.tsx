@@ -1,18 +1,17 @@
 import {
-  cn,
-  createPositionClass,
   Tooltip,
   TooltipArrow,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@/libs';
+} from '@/components';
+import { cn, createPositionClass } from '@/libs';
 import { ExclamationCircleIcon } from '@heroicons/react/24/outline';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof TooltipContent> = {
   component: TooltipContent,
-  title: 'Examples/Tooltip/help-arrow-icon',
+  title: 'Examples/Sample',
   parameters: {
     layout: 'centered',
     docs: {
@@ -42,8 +41,6 @@ const meta: Meta<typeof TooltipContent> = {
   },
 };
 export default meta;
-
-// type Story = StoryObj<typeof TooltipContent>;
 
 const Template: StoryObj<typeof TooltipContent> = {
   render: ({ side, align, variant = 'arrow', sideOffset, ...args }) => (

@@ -1,14 +1,16 @@
 import { CogIcon } from '@heroicons/react/16/solid';
 import { useState } from 'react';
-import { Button, Input, StrengthIndicator } from './components';
-import { Textarea } from './components/textarea/textarea';
 import {
+  Button,
+  Indicator,
+  Input,
   Label,
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from './libs';
+} from './components';
+import { Textarea } from './components/textarea/textarea';
 
 function App() {
   const [toggleButton, setToggleButton] = useState<boolean>(false);
@@ -38,7 +40,7 @@ function App() {
         <Textarea placeholder="Type your message here." />
       </div>
       <div className="w-[300px]">
-        <StrengthIndicator input="4sd345@542" />
+        <Indicator input="4sd345@542" />
       </div>
     </main>
   );

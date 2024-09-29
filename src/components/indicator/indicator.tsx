@@ -27,7 +27,6 @@ const Indicator: React.FC<IndicatorProps> = ({
   varietyBonus = 2, // Bonus for using all character types
   penaltyForRepeating = 1, // Penalty for repeating characters
   penaltyForSequential = 1, // Penalty for sequential characters
-  // suggestion,
   className,
   counsel,
   ...props

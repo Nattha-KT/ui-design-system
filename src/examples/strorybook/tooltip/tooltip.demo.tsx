@@ -1,10 +1,10 @@
-import { Button } from '@/components';
 import {
+  Button,
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@/libs';
+} from '@/components';
 
 export function TooltipDemo() {
   return (

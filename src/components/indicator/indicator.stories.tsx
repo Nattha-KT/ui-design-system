@@ -1,6 +1,7 @@
 import { ExclamationCircleIcon } from '@heroicons/react/24/outline';
 import type { Meta, StoryObj } from '@storybook/react';
-import { HoverHelp } from './hover-help';
+
+import { HoverHelp } from '@/libs';
 import { Indicator, IndicatorProps } from './indicator';
 
 const meta: Meta<typeof Indicator> = {
