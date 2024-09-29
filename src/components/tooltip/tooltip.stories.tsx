@@ -68,7 +68,7 @@ const createStory = (variant: TooltipProps['variant']): Story => {
               {...args}
               variant={variant}
               className={cn(
-                'w-52 rounded-lg border border-gray-200 bg-white p-4 text-marble-900 shadow-md',
+                'w-52 rounded-lg shadow-md',
                 {
                   'radix-align-end:left-4 radix-align-start:right-4':
                     isArrow && radixPosition,
@@ -110,3 +110,4 @@ const createStory = (variant: TooltipProps['variant']): Story => {
 // Stories for Default and Arrow variants
 export const Default: Story = createStory('default');
 export const Arrow: Story = createStory('arrow');
+export const Suggest: Story = createStory('suggest');
