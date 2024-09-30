@@ -4,6 +4,7 @@ export * from './indicator';
 export * from './input';
 export * from './label';
 export * from './password';
+export * from './phone-input';
 export * from './text-button';
 export * from './textarea';
 export * from './tooltip';
