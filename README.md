@@ -76,3 +76,9 @@ export default tseslint.config({
   },
 });
 ```
+
+## License
+
+This project uses third-party libraries, which are licensed under their respective licenses:
+
+- shadcn-phone-input (MIT License)
