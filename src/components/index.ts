@@ -8,3 +8,4 @@ export * from './phone-input';
 export * from './text-button';
 export * from './textarea';
 export * from './tooltip';
+export * from './ui';
