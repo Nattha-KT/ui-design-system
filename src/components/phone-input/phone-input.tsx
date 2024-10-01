@@ -1,5 +1,3 @@
-import { CheckIcon, ChevronsUpDown } from 'lucide-react';
-
 import * as React from 'react';
 
 import * as RPNInput from 'react-phone-number-input';
@@ -8,9 +6,7 @@ import flags from 'react-phone-number-input/flags';
 
 import {
   Command,
-  CommandEmpty,
   CommandGroup,
-  CommandInput,
   CommandItem,
   CommandList,
 } from '@/components/ui/command';
@@ -20,11 +16,13 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover';
 import { cn } from '@/libs';
+import { CheckIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
+import { CommandEmpty, CommandInput } from 'cmdk';
 import { Button } from '../button';
 import { Input, InputProps } from '../input';
 import { ScrollArea } from '../ui/scroll-area';
 
-type PhoneInputProps = Omit<
+export type PhoneInputProps = Omit<
   React.InputHTMLAttributes<HTMLInputElement>,
   'onChange' | 'value'
 > &
@@ -63,7 +61,12 @@ PhoneInput.displayName = 'PhoneInput';
 const InputComponent = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, ...props }, ref) => (
     <Input
-      className={cn('rounded-e-lg rounded-s-none', className)}
+      color="primary"
+      className={cn(
+        'h-11 w-[172px] rounded-e-lg rounded-s-none hover:border-marble-400',
+        className,
+      )}
+      placeholder="Enter a phone number"
       {...props}
       ref={ref}
     />
@@ -79,11 +82,13 @@ type CountrySelectProps = {
   // eslint-disable-next-line no-unused-vars
   onChange: (value: RPNInput.Country) => void;
   options: CountrySelectOption[];
+  useSearched?: boolean;
 };
 
 const CountrySelect = ({
   disabled,
   value,
+  useSearched,
   onChange,
   options,
 }: CountrySelectProps) => {
@@ -99,25 +104,37 @@ const CountrySelect = ({
       <PopoverTrigger asChild>
         <Button
           type="button"
-          variant={'secondary'}
-          className={cn('flex gap-1 rounded-e-none rounded-s-lg px-3')}
+          variant={'tertiary'}
+          className={cn(
+            'flex h-11 w-20 gap-3 rounded-e-none rounded-s-lg border border-marble-400 px-3 py-[14px] outline-indigo-200 focus-within:border-indigo-500 hover:bg-background focus:outline focus:outline-2 focus:hover:border-indigo-500',
+          )}
           disabled={disabled}
         >
           <FlagComponent country={value} countryName={value} />
-          <ChevronsUpDown
+          <ChevronDownIcon
             className={cn(
-              '-mr-2 h-4 w-4 opacity-50',
+              '-mr-2 h-4 w-4 text-marble-400 opacity-50',
               disabled ? 'hidden' : 'opacity-100',
             )}
           />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[300px] p-0">
-        <Command>
+      <PopoverContent
+        className="w-[250px] p-0"
+        align="start"
+        side="bottom"
+        sideOffset={4}
+      >
+        <Command className="peer">
           <CommandList>
             <ScrollArea className="h-72">
-              <CommandInput placeholder="Search country..." />
-              <CommandEmpty>No country found.</CommandEmpty>
+              {useSearched && (
+                <>
+                  <CommandInput placeholder="Search country..." />
+                  <CommandEmpty>No country found.</CommandEmpty>
+                </>
+              )}
+
               <CommandGroup>
                 {options
                   .filter((x) => x.value)
