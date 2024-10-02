@@ -34,17 +34,6 @@ export default tseslint.config(
     rules: {
       ...reactHooks.configs.recommended.rules,
       ...eslintPluginStorybook.recommended.rules,
-      // 'no-unused-vars': [
-      //   'error',
-      //   {
-      //     vars: 'all',
-      //     args: 'after-used',
-      //     argsIgnorePattern: '^_',
-      //     caughtErrors: 'all',
-      //     ignoreRestSiblings: false,
-      //     reportUsedIgnorePattern: false,
-      //   },
-      // ],
       '@typescript-eslint/no-unused-vars': [
         'error',
         {
