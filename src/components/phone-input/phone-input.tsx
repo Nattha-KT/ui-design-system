@@ -27,7 +27,6 @@ export type PhoneInputProps = Omit<
   'onChange' | 'value'
 > &
   Omit<RPNInput.Props<typeof RPNInput.default>, 'onChange'> & {
-    // eslint-disable-next-line no-unused-vars
     onChange?: (value: RPNInput.Value | undefined) => void;
   };
 
@@ -79,7 +78,6 @@ type CountrySelectOption = { label: string; value: RPNInput.Country };
 type CountrySelectProps = {
   disabled?: boolean;
   value: RPNInput.Country;
-  // eslint-disable-next-line no-unused-vars
   onChange: (value: RPNInput.Country) => void;
   options: CountrySelectOption[];
   useSearched?: boolean;

@@ -1,4 +1,4 @@
-import { TooltipProps } from '@/libs';
+import { TooltipProps } from '@/components';
 
 export const createPositionClass = (
   side?: TooltipProps['side'],
