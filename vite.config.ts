@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [mdx(), react()], // Mush come first
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@': path.resolve(__dirname, './lib'),
     },
   },
   test: {
