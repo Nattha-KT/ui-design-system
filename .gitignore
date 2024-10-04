@@ -25,5 +25,7 @@ dist-ssr
 
 *storybook.log
 lib/stories
+*.tsbuildinfo
 
 .noteme
+storybook-static

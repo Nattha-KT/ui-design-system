@@ -1,4 +1,4 @@
-# UI Design System Library
+# pangman-ui Library
 
 This project is a UI component library developed from a Figma design. The goal of this project is to create reusable, customizable UI components that can be easily integrated into web applications. Each component is crafted to ensure consistency, responsiveness, and a clean, modern interface in line with the Figma design.
 

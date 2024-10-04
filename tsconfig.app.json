@@ -1,21 +1,32 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
-    "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["./lib/*"]
+      // "pangman-ui": ["./lib/main.ts"]
     },
+
+    //Emit
+    "declaration": true,
+    // "emitDeclarationOnly": true,
+    "outDir": "dist",
+    "skipLibCheck": true,
+    "sourceMap": true,
+
+    /* Interop Constraints */
+    "allowSyntheticDefaultImports": true /* Allow 'import x from y' when a module doesn't have a default export. */,
+    "esModuleInterop": true /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */,
+    "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
 
     /* Bundler mode */
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
+    // "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "moduleDetection": "force",
-    "noEmit": true,
+    // "noEmit": true,
     "jsx": "react-jsx",
 
     /* Linting */
@@ -24,5 +35,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "lib"]
+  "include": ["lib/**/*"]
+  // "exclude": ["node_modules", "dist", "**/*.spec.tsx", "**/*.stories.tsx"]
 }
