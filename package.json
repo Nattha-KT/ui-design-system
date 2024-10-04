@@ -28,6 +28,7 @@
     "prepare": "husky",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx ",
     "format": "prettier --write .",
+    "format-check": "prettier --check .",
     "publish": "npm run build && npm publish",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
