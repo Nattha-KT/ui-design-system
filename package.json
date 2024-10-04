@@ -26,7 +26,7 @@
     "build": "tsc --build && vite build",
     "preview": "vite preview",
     "prepare": "husky",
-    "lint": "eslint . --ext .ts,.tsx,.js,.jsx ",
+    "lint": "eslint . --fix ",
     "format": "prettier --write .",
     "format-check": "prettier --check .",
     "publish": "npm run build && npm publish",
