@@ -15,7 +15,7 @@ This project is a UI component library developed from a Figma design. The goal o
 ###
 
 - [Preview Figma Design](https://embed.figma.com/design/yVLJLnreOFixR5EbOIt2zH/Design-System?node-id=2402-4625&embed-host=share)
-- The Figma UI Kit is open sourced by [Irina Nik](www.youtube.com/@irina_nik).
+- The Figma UI Kit is open sourced by [Irina Nik](https://www.figma.com/community/file/1131891137727824106/free-accessible-design-system).
 - [View more](<https://www.figma.com/design/yVLJLnreOFixR5EbOIt2zH/Free-Accessible-Design-System-(Community)?node-id=1406-1723&m=dev&t=grzyJnuaJGI9wsep-1>) For sample best practive.
 
 ###
