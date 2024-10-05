@@ -16,6 +16,7 @@ export default tseslint.config(
       'public',
       '*.config.js',
       '*.setup.js',
+      'storybook-static'
     ],
   },
   {
