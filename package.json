@@ -1,10 +1,11 @@
 {
   "name": "pangman-ui",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.3",
+  "license": "MIT",
   "type": "module",
-  "main": "./dist/pangman-ui.umd.js",
-  "module": "./dist/pangman-ui.es.js",
+  "main": "./dist/pangman-ui.cjs.js",
+  "module": "./dist/pangman-ui.esm.js",
   "types": "./dist/pangman-ui.d.ts",
   "files": [
     "dist"
@@ -14,11 +15,11 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/pangman-ui.es.js",
-      "require": "./dist/pangman-ui.umd.js",
+      "import": "./dist/pangman-ui.cjs.js",
+      "require": "./dist/pangman-ui.esm.js",
       "types": "./dist/pangman-ui.d.ts"
     },
-    "./dist/style.css": "./dist/style.css"
+    "./dist/style.css": "./dist/main.css"
   },
   "scripts": {
     "dev": "vite",
@@ -29,7 +30,7 @@
     "lint": "eslint . --fix",
     "format": "prettier --write .",
     "format-check": "prettier --check .",
-    "publish": "npm run build && npm publish",
+    "publish": "npm publish",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "storybook-docs": "storybook dev --docs",

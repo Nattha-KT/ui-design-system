@@ -18,6 +18,7 @@ export default defineConfig({
       outDir: 'dist',
       insertTypesEntry: true,
       exclude: ['lib/**/*.spec.tsx', 'lib/**/*.stories.tsx', 'tests/**/*'],
+      tsconfigPath: './tsconfig.app.json',
     }),
     libInjectCss(),
   ], // Mush come first
@@ -35,7 +36,7 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, 'lib/main.ts'),
       name: 'pangman-ui',
-      fileName: 'pangman-ui',
+      fileName: (format) => `pangman-ui.${format}.js`,
       formats: ['es', 'cjs'],
     },
     // bundler options
@@ -44,17 +45,20 @@ export default defineConfig({
       external: ['react', 'react-dom', 'react/jsx-runtime', 'tailwindcss'],
       output: {
         // inlineDynamicImports: false,
+        // preserveModules: true,
+        // dir: 'dist',
+        // entryFileNames: '[name].js',
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
-          // 'react/jsx-runtime': 'react/jsx-runtime',
+          'react/jsx-runtime': 'react/jsx-runtime',
           tailwindcss: 'tailwindcss',
         },
       },
     },
     copyPublicDir: false,
-    sourcemap: true,
-    emptyOutDir: true,
+    // sourcemap: true,
+    // emptyOutDir: true,
   },
   css: {
     postcss: {
