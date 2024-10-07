@@ -2,6 +2,16 @@
 
 Welcome to the **UI Library**, a prototype designed for learners to understand the **fundamental structure** of UI design and best practices for structuring and organizing UI components. This library serves as an example of how to **build a scalable UI library** using **TypeScript**, **React**, and **Vite**.
 
+## Purpose
+
+This project is not just a set of reusable UI components, but also a **learning tool** aimed at helping developers:
+
+- Understand **best practices** in structuring UI libraries.
+- Learn how to effectively use **TypeScript** with React and Vite.
+- Create a **foundation** for building their own scalable, reusable UI component libraries.
+
+By studying this library, learners can gain insight into the organization and structure that facilitates easy maintenance, scaling, and collaboration in large projects.
+
 ## Design system
 
 ###
@@ -17,18 +27,6 @@ Welcome to the **UI Library**, a prototype designed for learners to understand t
 - [Preview Figma Design](https://embed.figma.com/design/yVLJLnreOFixR5EbOIt2zH/Design-System?node-id=2402-4625&embed-host=share)
 - The Figma UI Kit is open sourced by [Irina Nik](https://www.figma.com/community/file/1131891137727824106/free-accessible-design-system).
 - [View more](<https://www.figma.com/design/yVLJLnreOFixR5EbOIt2zH/Free-Accessible-Design-System-(Community)?node-id=1406-1723&m=dev&t=grzyJnuaJGI9wsep-1>) For sample best practive.
-
----
-
-## Purpose
-
-This project is not just a set of reusable UI components, but also a **learning tool** aimed at helping developers:
-
-- Understand **best practices** in structuring UI libraries.
-- Learn how to effectively use **TypeScript** with React and Vite.
-- Create a **foundation** for building their own scalable, reusable UI component libraries.
-
-By studying this library, learners can gain insight into the organization and structure that facilitates easy maintenance, scaling, and collaboration in large projects.
 
 ## Features
 
@@ -146,6 +144,6 @@ These practices—Tree Shaking, Separate Entry Points, Code Splitting, and Dynam
 ## License
 
 This project is licensed under the [MIT License](./LICENSE).
-This project uses third-party libraries, which are licensed under their respective licenses:
+It also incorporates third-party libraries that are licensed under their respective terms:
 
 - shadcn-phone-input (MIT License)
