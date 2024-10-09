@@ -1,7 +1,7 @@
 {
   "name": "pangman-ui",
   "private": false,
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "MIT",
   "type": "module",
   "main": "./dist/pangman-ui.cjs.js",
@@ -15,9 +15,9 @@
   ],
   "exports": {
     ".": {
+      "types": "./dist/pangman-ui.d.ts",
       "import": "./dist/pangman-ui.cjs.js",
-      "require": "./dist/pangman-ui.esm.js",
-      "types": "./dist/pangman-ui.d.ts"
+      "require": "./dist/pangman-ui.esm.js"
     },
     "./dist/style.css": "./dist/main.css"
   },
