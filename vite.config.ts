@@ -1,7 +1,7 @@
 // import mdx from '@mdx-js/rollup';
 import react from '@vitejs/plugin-react-swc';
 import { resolve } from 'path';
-import tailwindcss from 'tailwindcss';
+import { visualizer } from 'rollup-plugin-visualizer';
 import dts from 'vite-plugin-dts';
 import { libInjectCss } from 'vite-plugin-lib-inject-css';
 import tsconfigPaths from 'vite-tsconfig-paths';
@@ -13,6 +13,7 @@ export default defineConfig({
     // mdx(),
     tsconfigPaths(),
     react(),
+    visualizer(),
     dts({
       rollupTypes: true,
       outDir: 'dist',
@@ -44,10 +45,6 @@ export default defineConfig({
     rollupOptions: {
       external: ['react', 'react-dom', 'react/jsx-runtime', 'tailwindcss'],
       output: {
-        // inlineDynamicImports: false,
-        // preserveModules: true,
-        // dir: 'dist',
-        // entryFileNames: '[name].js',
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
@@ -61,8 +58,6 @@ export default defineConfig({
     // emptyOutDir: true,
   },
   css: {
-    postcss: {
-      plugins: [tailwindcss],
-    },
+    postcss: './postcss.config.js',
   },
 });

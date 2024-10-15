@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 import { blackA, violet } from '@radix-ui/colors';
 export default {
+  mode: 'jit',
   content: ['./index.html', './lib/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {

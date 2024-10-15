@@ -29,3 +29,7 @@ lib/stories
 
 .noteme
 storybook-static
+
+# builder
+stats.html
+build.css
