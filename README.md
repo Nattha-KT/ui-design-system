@@ -131,7 +131,7 @@ git clone https://github.com/Nattha-KT/ui-design-system.git
 #### 2. Navigate to the project directory:
 
 ```bash
-cd ui-design-syste
+cd ui-design-system
 ```
 
 #### 3. Install dependencies:
