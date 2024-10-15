@@ -28,8 +28,6 @@ By studying this library, learners can gain insight into the organization and st
 - The Figma UI Kit is open sourced by [Irina Nik](https://www.figma.com/community/file/1131891137727824106/free-accessible-design-system).
 - [View more](<https://www.figma.com/design/yVLJLnreOFixR5EbOIt2zH/Free-Accessible-Design-System-(Community)?node-id=1406-1723&m=dev&t=grzyJnuaJGI9wsep-1>) For sample best practive.
 
-Here's a table of contents for the provided **pangman-ui** documentation:
-
 ### Table of Contents
 
 1. **Installation**
