@@ -12,24 +12,20 @@ Welcome to the **UI Library**, a prototype designed for learners to understand t
 
    - [Figma Design System](#design-system)
 
-3. **Installation**
+3. **Installation and Usage**
 
    - [Installation Guide](#installation)
 
-4. **Usage**
-
-   - [Example Usage of Components](#usage)
-
-5. **Components**
+4. **Components**
 
    - [List of Components](#components)
    - In `lib/content/docs`
 
-6. **Additional Recommendations**
+5. **Project Setup**
 
-   - [Best Practices for Building a UI Library](#additional-recommendations-for-building-a-good-ui-library)
+   - [Install and Run Document](#project-setup)
 
-7. **Tailwind CSS Optimization**
+6. **Tailwind CSS Optimization**
 
    - [Install Dependencies](#optimize-tailwind-css)
    - [Configure Tailwind and PostCSS](#optimize-tailwind-css)
@@ -39,8 +35,11 @@ Welcome to the **UI Library**, a prototype designed for learners to understand t
    - [Minify and Bundle](#optimize-tailwind-css)
    - [Analyze Final Build](#optimize-tailwind-css)
 
-8. **For cloning this repository**
-   - [Install and Run Document](#project-setup)
+7. **Additional Recommendations**
+
+   - [Best Practices for Building a UI Library](#additional-recommendations-for-building-a-good-ui-library)
+
+---
 
 ## Purpose
 
@@ -51,6 +50,8 @@ This project is not just a set of reusable UI components, but also a **learning 
 - Create a **foundation** for building their own scalable, reusable UI component libraries.
 
 By studying this library, learners can gain insight into the organization and structure that facilitates easy maintenance, scaling, and collaboration in large projects.
+
+---
 
 ## Design system
 
@@ -68,6 +69,8 @@ By studying this library, learners can gain insight into the organization and st
 - The Figma UI Kit is open sourced by [Irina Nik](https://www.figma.com/community/file/1131891137727824106/free-accessible-design-system).
 - [View more](<https://www.figma.com/design/yVLJLnreOFixR5EbOIt2zH/Free-Accessible-Design-System-(Community)?node-id=1406-1723&m=dev&t=grzyJnuaJGI9wsep-1>) For sample best practive.
 
+---
+
 ## Features
 
 - **Educational Prototype**: Learn the basic structure of designing reusable UI components.
@@ -75,14 +78,18 @@ By studying this library, learners can gain insight into the organization and st
 - **TypeScript, React, and Vite**: Understand how to combine these technologies to build a modern UI library.
 - **Customizable & Accessible**: Components are designed to be flexible, responsive, and accessible by default.
 
-## Installation
+## Installation and Usage
+
+install ui libray
 
 ```bash
 # Using npm
 npm install pangman-ui
 ```
 
-## Usage
+usage:
+
+###
 
 ```tsx
 import React from 'react';
@@ -111,73 +118,35 @@ export default App;
 | `PhoneInput` | An input field specifically designed for phone number entry, with validation and format handling based on different country codes. |
 | `Password`   | A password input field with integrated strength meter and feedback, offering better security awareness during password creation.   |
 
-## Additional Recommendations for Building a Good UI Library
+---
 
-When building a UI library, especially for large-scale applications, there are several practices and tools that can help improve maintainability and scalability:
+## Project Setup
 
-### 1. **Monorepo Structure**
+#### 1. Clone the repository:
 
-Using a **monorepo** approach can help manage multiple packages (e.g., components, themes, utilities) within a single repository. Tools like **Nx** or **Lerna** make it easy to structure and manage your monorepo, offering benefits such as:
-
-- Centralized management of dependencies.
-- Easier refactoring across multiple packages.
-- Consistent versioning and publishing workflows.
-
-### 2. **Component Documentation**
-
-Make sure to document each component thoroughly. Tools like **Storybook** allow you to create a visual representation of your components, making it easier for others to understand and use your library.
-
-### 3. **Automated Testing**
-
-Including **unit tests** for each component ensures that they work as expected. Testing frameworks like **Jest** or **Vitest** and **React Testing Library** are useful for verifying component behavior.
-
-### 4. **CI/CD Integration**
-
-Setting up continuous integration (CI) and continuous delivery (CD) pipelines can automate testing, building, and publishing your library. Tools like **GitHub Actions** or **CircleCI** can help automate these processes, ensuring that your library is always ready for production.
-
-### 5. **Versioning and Changelog**
-
-Use a versioning strategy like **semantic versioning** (SemVer) to keep track of changes in your library. Also, maintain a **changelog** to document important updates and improvements, helping users understand what has changed between releases.
-
-### 6. **Tree Shaking**
-
-Tree shaking removes unused code, making your library lighter. Ensure your components are exported as **ES modules** to enable this.
-
-```ts
-// Import only Button
-import { Button } from '@your-library-name/ui-library';
+```bash
+git clone https://github.com/Nattha-KT/ui-design-system.git
 ```
 
-### 7. **Separate Entry Points**
+#### 2. Navigate to the project directory:
 
-Provide separate entry files for individual components, allowing developers to import only what they need.
-
-```ts
-// Import only the Button component
-import Button from '@your-library-name/ui-library/button';
+```bash
+cd ui-design-syste
 ```
 
-### 8. **Code Splitting**
+#### 3. Install dependencies:
 
-Break large components into smaller bundles that load only when needed, improving performance.
+This project uses **Vite**, **React**, **TypeScript**. To install all the necessary dependencies, run:
 
-```ts
-const Modal = React.lazy(() => import('@your-library-name/ui-library/modal'));
-
-<Suspense fallback={<div>Loading...</div>}>
-  <Modal />
-</Suspense>;
+```bash
+npm install
 ```
 
-### 9. **Dynamic Import**
+#### 4. Run documentation with storybook:
 
-Use dynamic imports to load components asynchronously, further enhancing performance.
-
-```ts
-const Chart = React.lazy(() => import('@your-library-name/ui-library/chart'));
+```bash
+npm run storybook
 ```
-
-These practices—Tree Shaking, Separate Entry Points, Code Splitting, and Dynamic Import—will help keep your library efficient and optimized.
 
 ---
 
@@ -330,33 +299,73 @@ This will generate a report that shows you which parts of the **CSS** and **JS**
 
 ---
 
-# Project Setup
+## Additional Recommendations for Building a Good UI Library
 
-#### 1. Clone the repository:
+When building a UI library, especially for large-scale applications, there are several practices and tools that can help improve maintainability and scalability:
 
-```bash
-git clone https://github.com/Nattha-KT/ui-design-system.git
+### 1. **Monorepo Structure**
+
+Using a **monorepo** approach can help manage multiple packages (e.g., components, themes, utilities) within a single repository. Tools like **Nx** or **Lerna** make it easy to structure and manage your monorepo, offering benefits such as:
+
+- Centralized management of dependencies.
+- Easier refactoring across multiple packages.
+- Consistent versioning and publishing workflows.
+
+### 2. **Component Documentation**
+
+Make sure to document each component thoroughly. Tools like **Storybook** allow you to create a visual representation of your components, making it easier for others to understand and use your library.
+
+### 3. **Automated Testing**
+
+Including **unit tests** for each component ensures that they work as expected. Testing frameworks like **Jest** or **Vitest** and **React Testing Library** are useful for verifying component behavior.
+
+### 4. **CI/CD Integration**
+
+Setting up continuous integration (CI) and continuous delivery (CD) pipelines can automate testing, building, and publishing your library. Tools like **GitHub Actions** or **CircleCI** can help automate these processes, ensuring that your library is always ready for production.
+
+### 5. **Versioning and Changelog**
+
+Use a versioning strategy like **semantic versioning** (SemVer) to keep track of changes in your library. Also, maintain a **changelog** to document important updates and improvements, helping users understand what has changed between releases.
+
+### 6. **Tree Shaking**
+
+Tree shaking removes unused code, making your library lighter. Ensure your components are exported as **ES modules** to enable this.
+
+```ts
+// Import only Button
+import { Button } from '@your-library-name/ui-library';
 ```
 
-#### 2. Navigate to the project directory:
+### 7. **Separate Entry Points**
 
-```bash
-cd ui-design-syste
+Provide separate entry files for individual components, allowing developers to import only what they need.
+
+```ts
+// Import only the Button component
+import Button from '@your-library-name/ui-library/button';
 ```
 
-#### 3. Install dependencies:
+### 8. **Code Splitting**
 
-This project uses **Vite**, **React**, **TypeScript**. To install all the necessary dependencies, run:
+Break large components into smaller bundles that load only when needed, improving performance.
 
-```bash
-npm install
+```ts
+const Modal = React.lazy(() => import('@your-library-name/ui-library/modal'));
+
+<Suspense fallback={<div>Loading...</div>}>
+  <Modal />
+</Suspense>;
 ```
 
-#### 4. Run documentation with storybook:
+### 9. **Dynamic Import**
 
-```bash
-npm run storybook
+Use dynamic imports to load components asynchronously, further enhancing performance.
+
+```ts
+const Chart = React.lazy(() => import('@your-library-name/ui-library/chart'));
 ```
+
+These practices—Tree Shaking, Separate Entry Points, Code Splitting, and Dynamic Import—will help keep your library efficient and optimized.
 
 ---
 
