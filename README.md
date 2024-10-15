@@ -28,6 +28,41 @@ By studying this library, learners can gain insight into the organization and st
 - The Figma UI Kit is open sourced by [Irina Nik](https://www.figma.com/community/file/1131891137727824106/free-accessible-design-system).
 - [View more](<https://www.figma.com/design/yVLJLnreOFixR5EbOIt2zH/Free-Accessible-Design-System-(Community)?node-id=1406-1723&m=dev&t=grzyJnuaJGI9wsep-1>) For sample best practive.
 
+Here's a table of contents for the provided **pangman-ui** documentation:
+
+### Table of Contents
+
+1. **Installation**
+
+   - [Installation Guide](#installation)
+
+2. **Usage**
+
+   - [Example Usage of Components](#usage)
+
+3. **Components**
+
+   - [List of Components](#components)
+   - In `lib/content/docs`
+
+4. **Additional Recommendations**
+
+   - [Best Practices for Building a UI Library](#additional-recommendations-for-building-a-good-ui-library)
+
+5. **Tailwind CSS Optimization**
+
+   - [Install Dependencies](#optimize-tailwind-css)
+   - [Configure Tailwind and PostCSS](#optimize-tailwind-css)
+   - [Update Vite Configuration](#optimize-tailwind-css)
+   - [Import Tailwind in CSS](#optimize-tailwind-css)
+   - [Optimize for Production](#optimize-tailwind-css)
+   - [Minify and Bundle](#optimize-tailwind-css)
+   - [Analyze Final Build](#optimize-tailwind-css)
+
+6. **For cloning this repository**
+
+   - [Install and Run Document](#project-setup)
+
 ## Features
 
 - **Educational Prototype**: Learn the basic structure of designing reusable UI components.
@@ -138,6 +173,185 @@ const Chart = React.lazy(() => import('@your-library-name/ui-library/chart'));
 ```
 
 These practices—Tree Shaking, Separate Entry Points, Code Splitting, and Dynamic Import—will help keep your library efficient and optimized.
+
+---
+
+## Optimize Tailwind CSS
+
+To use **PostCSS** with **Tailwind CSS** in an optimized way in your Vite + React project, follow these steps:
+
+### 1. **Install Dependencies**
+
+Ensure that you have the necessary dependencies installed for **Tailwind CSS** and **PostCSS**:
+
+```bash
+npm install tailwindcss postcss autoprefixer cssnano
+```
+
+### 2. **Configure Tailwind and PostCSS**
+
+Create the configuration files for **Tailwind CSS** and **PostCSS**.
+
+#### **PostCSS Configuration**
+
+Create a `postcss.config.js` file in the root of your project. This file tells **PostCSS** how to process your styles:
+
+```js
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {}, // Adds vendor prefixes automatically
+  },
+};
+```
+
+#### **Tailwind Configuration**
+
+If you don't already have a `tailwind.config.js` file, you can generate one with the following command:
+
+```bash
+npx tailwindcss init
+```
+
+In your `tailwind.config.js` file, configure the purge options for removing unused CSS during production builds:
+
+```js
+module.exports = {
+  mode: 'jit', // Enable Just-in-Time (JIT) mode for faster builds and smaller final output
+  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'], // Paths to files to scan for used CSS classes
+  darkMode: false, // or 'media' or 'class'
+  theme: {
+    extend: {},
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [],
+};
+```
+
+`Note` You can learn more in Tailwind Document : [Optimizeing for Production](https://tailwindcss.com/docs/optimizing-for-production)
+
+### 3. **Update Vite Configuration**
+
+Modify your `vite.config.js` file to ensure that **PostCSS** is correctly applied. Since **Vite** has built-in support for **PostCSS**, you don't need to do much here:
+
+```js
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react-swc';
+import path from 'path';
+
+export default defineConfig({
+  plugins: [react()],
+  css: {
+    postcss: './postcss.config.js', // Point to your PostCSS config file
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+      '@styles': path.resolve(__dirname, 'src/styles'),
+    },
+  },
+});
+```
+
+### 4. **Import Tailwind in Your CSS**
+
+In your main CSS or SCSS file (e.g., `src/index.css` or `src/styles/main.scss`), import the core **Tailwind CSS** styles:
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+This ensures that all **Tailwind CSS** base styles, components, and utilities are available in your project.
+
+### 5. **Optimize CSS for Production**
+
+During production builds, **Tailwind CSS** automatically purges unused styles from your final CSS bundle. You don’t need to configure additional plugins like **PurgeCSS** because **Tailwind's JIT mode** will ensure that only the used CSS is included.
+
+For best optimization, ensure you run the **production build** using:
+
+```bash
+npm run build
+```
+
+Vite will:
+
+- Minimize your CSS and JS bundles.
+- Purge unused Tailwind classes (if configured correctly with `purge` paths).
+- Use **PostCSS** to add vendor prefixes via **Autoprefixer**.
+
+### 6. **Minify and Bundle Tailwind (Optional)**
+
+If you'd like to further optimize your build, Vite already handles CSS minification by default. You can additionally configure **CSS splitting** if needed:
+
+```js
+export default defineConfig({
+  build: {
+    cssCodeSplit: true, // Ensures CSS is split for better performance
+    minify: 'terser', // Terser is used to minimize JS and CSS
+  },
+});
+```
+
+### 7. **Analyze the Final Build (Optional)**
+
+To verify that **PostCSS** and **Tailwind** are optimized in the final build, use a build analyzer. This can give you insights into your bundle size:
+
+1. Install the build analyzer plugin:
+
+   ```bash
+   npm install rollup-plugin-visualizer --save-dev
+   ```
+
+2. Add the analyzer to your `vite.config.js`:
+
+   ```js
+   import { visualizer } from 'rollup-plugin-visualizer';
+
+   export default defineConfig({
+     plugins: [react(), visualizer()],
+   });
+   ```
+
+3. Run the production build and analyze:
+   ```bash
+   npm run build
+   ```
+
+This will generate a report that shows you which parts of the **CSS** and **JS** are contributing the most to your bundle size.
+
+---
+
+# Project Setup
+
+#### 1. Clone the repository:
+
+```bash
+git clone https://github.com/Nattha-KT/ui-design-system.git
+```
+
+#### 2. Navigate to the project directory:
+
+```bash
+cd ui-design-syste
+```
+
+#### 3. Install dependencies:
+
+This project uses **Vite**, **React**, **TypeScript**. To install all the necessary dependencies, run:
+
+```bash
+npm install
+```
+
+#### 4. Run documentation with storybook:
+
+```bash
+npm run storybook
+```
 
 ---
 
