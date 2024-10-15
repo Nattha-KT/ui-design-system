@@ -2,6 +2,46 @@
 
 Welcome to the **UI Library**, a prototype designed for learners to understand the **fundamental structure** of UI design and best practices for structuring and organizing UI components. This library serves as an example of how to **build a scalable UI library** using **TypeScript**, **React**, and **Vite**.
 
+### Table of Contents
+
+1. **Purpose**
+
+   - [Overview and Learning Objectives](#purpose)
+
+2. **Design System**
+
+   - [Figma Design System](#design-system)
+
+3. **Installation**
+
+   - [Installation Guide](#installation)
+
+4. **Usage**
+
+   - [Example Usage of Components](#usage)
+
+5. **Components**
+
+   - [List of Components](#components)
+   - In `lib/content/docs`
+
+6. **Additional Recommendations**
+
+   - [Best Practices for Building a UI Library](#additional-recommendations-for-building-a-good-ui-library)
+
+7. **Tailwind CSS Optimization**
+
+   - [Install Dependencies](#optimize-tailwind-css)
+   - [Configure Tailwind and PostCSS](#optimize-tailwind-css)
+   - [Update Vite Configuration](#optimize-tailwind-css)
+   - [Import Tailwind in CSS](#optimize-tailwind-css)
+   - [Optimize for Production](#optimize-tailwind-css)
+   - [Minify and Bundle](#optimize-tailwind-css)
+   - [Analyze Final Build](#optimize-tailwind-css)
+
+8. **For cloning this repository**
+   - [Install and Run Document](#project-setup)
+
 ## Purpose
 
 This project is not just a set of reusable UI components, but also a **learning tool** aimed at helping developers:
@@ -27,39 +67,6 @@ By studying this library, learners can gain insight into the organization and st
 - [Preview Figma Design](https://embed.figma.com/design/yVLJLnreOFixR5EbOIt2zH/Design-System?node-id=2402-4625&embed-host=share)
 - The Figma UI Kit is open sourced by [Irina Nik](https://www.figma.com/community/file/1131891137727824106/free-accessible-design-system).
 - [View more](<https://www.figma.com/design/yVLJLnreOFixR5EbOIt2zH/Free-Accessible-Design-System-(Community)?node-id=1406-1723&m=dev&t=grzyJnuaJGI9wsep-1>) For sample best practive.
-
-### Table of Contents
-
-1. **Installation**
-
-   - [Installation Guide](#installation)
-
-2. **Usage**
-
-   - [Example Usage of Components](#usage)
-
-3. **Components**
-
-   - [List of Components](#components)
-   - In `lib/content/docs`
-
-4. **Additional Recommendations**
-
-   - [Best Practices for Building a UI Library](#additional-recommendations-for-building-a-good-ui-library)
-
-5. **Tailwind CSS Optimization**
-
-   - [Install Dependencies](#optimize-tailwind-css)
-   - [Configure Tailwind and PostCSS](#optimize-tailwind-css)
-   - [Update Vite Configuration](#optimize-tailwind-css)
-   - [Import Tailwind in CSS](#optimize-tailwind-css)
-   - [Optimize for Production](#optimize-tailwind-css)
-   - [Minify and Bundle](#optimize-tailwind-css)
-   - [Analyze Final Build](#optimize-tailwind-css)
-
-6. **For cloning this repository**
-
-   - [Install and Run Document](#project-setup)
 
 ## Features
 
