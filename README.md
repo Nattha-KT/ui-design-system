@@ -117,6 +117,7 @@ export default App;
 | `Textarea`   | A multi-line input field that allows users to enter longer text, useful for comments, descriptions, or notes.                      |
 | `PhoneInput` | An input field specifically designed for phone number entry, with validation and format handling based on different country codes. |
 | `Password`   | A password input field with integrated strength meter and feedback, offering better security awareness during password creation.   |
+| `..Others`   | Includes additional components and utilities to further extend functionality as needed.                                            |
 
 ---
 
