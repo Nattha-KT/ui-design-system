@@ -2,42 +2,43 @@
 
 Welcome to the **UI Library**, a prototype designed for learners to understand the **fundamental structure** of UI design and best practices for structuring and organizing UI components. This library serves as an example of how to **build a scalable UI library** using **TypeScript**, **React**, and **Vite**.
 
-### Table of Contents
+---
+
+### 📑 Table of Contents
 
 1. **Purpose**
 
-   - [Overview and Learning Objectives](#purpose)
+   - 🔍 [Overview and Learning Objectives](#purpose)
 
 2. **Design System**
 
-   - [Figma Design System](#design-system)
+   - 🎨 [Figma Design System](#design-system)
 
 3. **Installation and Usage**
 
-   - [Installation Guide](#installation)
+   - 🛠️ [Installation Guide](#installation)
 
 4. **Components**
 
-   - [List of Components](#components)
-   - In `lib/content/docs`
+   - 📦 [List of Components](#components)
+   - 📂 In `lib/content/docs`
 
 5. **Project Setup**
 
-   - [Install and Run Document](#project-setup)
+   - ⚙️ [Install and Run Document](#project-setup)
 
 6. **Tailwind CSS Optimization**
 
-   - [Install Dependencies](#optimize-tailwind-css)
-   - [Configure Tailwind and PostCSS](#optimize-tailwind-css)
-   - [Update Vite Configuration](#optimize-tailwind-css)
-   - [Import Tailwind in CSS](#optimize-tailwind-css)
-   - [Optimize for Production](#optimize-tailwind-css)
-   - [Minify and Bundle](#optimize-tailwind-css)
-   - [Analyze Final Build](#optimize-tailwind-css)
+   - 📥 [Install Dependencies](#optimize-tailwind-css)
+   - 🎛️ [Configure Tailwind and PostCSS](#optimize-tailwind-css)
+   - ⚙️ [Update Vite Configuration](#optimize-tailwind-css)
+   - 🎨 [Import Tailwind in CSS](#optimize-tailwind-css)
+   - 🚀 [Optimize for Production](#optimize-tailwind-css)
+   - 📉 [Minify and Bundle](#optimize-tailwind-css)
+   - 🔎 [Analyze Final Build](#optimize-tailwind-css)
 
 7. **Additional Recommendations**
-
-   - [Best Practices for Building a UI Library](#additional-recommendations-for-building-a-good-ui-library)
+   - 💡 [Best Practices for Building a UI Library](#additional-recommendations-for-building-a-good-ui-library)
 
 ---
 
