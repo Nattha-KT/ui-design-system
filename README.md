@@ -42,7 +42,7 @@ Welcome to the **UI Library**, a prototype designed for learners to understand t
 
 ---
 
-## Purpose
+## 🫀Purpose
 
 This project is not just a set of reusable UI components, but also a **learning tool** aimed at helping developers:
 
@@ -54,7 +54,7 @@ By studying this library, learners can gain insight into the organization and st
 
 ---
 
-## Design system
+## 🧠Design system
 
 ###
 
@@ -72,7 +72,7 @@ By studying this library, learners can gain insight into the organization and st
 
 ---
 
-## Features
+## 🤖Features
 
 - **Educational Prototype**: Learn the basic structure of designing reusable UI components.
 - **Best Practices**: Follow best practices in organizing and structuring your project for scalability and reusability.
@@ -109,7 +109,7 @@ const App = () => {
 export default App;
 ```
 
-## Components
+## 💊Components
 
 | Component    | Description                                                                                                                        |
 | ------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
@@ -152,7 +152,7 @@ npm run storybook
 
 ---
 
-## Optimize Tailwind CSS
+## 🚀Optimize Tailwind CSS
 
 To use **PostCSS** with **Tailwind CSS** in an optimized way in your Vite + React project, follow these steps:
 
@@ -301,7 +301,7 @@ This will generate a report that shows you which parts of the **CSS** and **JS**
 
 ---
 
-## Additional Recommendations for Building a Good UI Library
+## 🔖Additional Recommendations for Building a Good UI Library
 
 When building a UI library, especially for large-scale applications, there are several practices and tools that can help improve maintainability and scalability:
 
@@ -335,7 +335,7 @@ Tree shaking removes unused code, making your library lighter. Ensure your compo
 
 ```ts
 // Import only Button
-import { Button } from '@your-library-name/ui-library';
+import { Button } from 'pangman-ui';
 ```
 
 ### 7. **Separate Entry Points**
@@ -344,7 +344,7 @@ Provide separate entry files for individual components, allowing developers to i
 
 ```ts
 // Import only the Button component
-import Button from '@your-library-name/ui-library/button';
+import Button from 'pangman-ui/button';
 ```
 
 ### 8. **Code Splitting**
@@ -352,7 +352,7 @@ import Button from '@your-library-name/ui-library/button';
 Break large components into smaller bundles that load only when needed, improving performance.
 
 ```ts
-const Modal = React.lazy(() => import('@your-library-name/ui-library/modal'));
+const Modal = React.lazy(() => import('pangman-ui/modal'));
 
 <Suspense fallback={<div>Loading...</div>}>
   <Modal />
@@ -364,7 +364,7 @@ const Modal = React.lazy(() => import('@your-library-name/ui-library/modal'));
 Use dynamic imports to load components asynchronously, further enhancing performance.
 
 ```ts
-const Chart = React.lazy(() => import('@your-library-name/ui-library/chart'));
+const Chart = React.lazy(() => import('pangman-ui/chart'));
 ```
 
 These practices—Tree Shaking, Separate Entry Points, Code Splitting, and Dynamic Import—will help keep your library efficient and optimized.
